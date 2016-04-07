@@ -51,6 +51,8 @@ angular.module('iflux.issues', ['ngTagsInput'])
 .controller('createIssueCtrl', function(qimgUrl, qimgToken, CameraService, $ionicHistory,IssueService, $log, $http, $scope, apiUrl, geolocation, $state){
     
     $scope.issueToAdd = {};
+    $scope.tagToAdd =  {};
+   
     $scope.placeholderUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
 	
     //To prevent firefox geoloc but we first set geoData
@@ -77,12 +79,39 @@ angular.module('iflux.issues', ['ngTagsInput'])
 		}
 	);
     $scope.createIssue = function (issueToAdd){
+        var test = $scope;
+        console.log(test);
         
         if(issueToAdd.imageUrl === undefined){
 			issueToAdd.imageUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
 		}
         IssueService.createIssue(issueToAdd, 
 		function(data){
+            //
+            var id = data.id;
+        var url = apiUrl+"/issues/"+id+"/actions";
+
+        var tags = [];       
+       
+        for(var i=0;i<test.tagToAdd.tags.length;i++){
+          tags.push($scope.tagToAdd.tags[i].text);
+        }
+        
+        var tagObj = {
+          type : "addTags",
+          payload :{
+            tags : tags
+          }
+        }
+
+        $http({
+          method: 'POST',
+          url: url,
+          data: tagObj
+        }).success(function(data) {
+            console.log("tags added");
+        });    
+
 			$state.go('eventmenu.issueDetails', {issueId: data.id});
 		},
 		function(error){
