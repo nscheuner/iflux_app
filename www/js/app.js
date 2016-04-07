@@ -72,6 +72,16 @@ angular.module('Iflux',
       }
     })
 
+    .state('eventmenu.myIssueList', {
+      url: '/myIssueList',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/myIssueList.html',
+          controller: 'IssueCtrl'
+        }
+      }
+    })
+
     // This is the issue details state.
     .state('eventmenu.issueDetails', {
       // We use a parameterized route for this state.
