@@ -4,16 +4,32 @@ angular.module('iflux.issues', [])
     .controller('IssueCtrl', function(IssueService, apiUrl, $http, $ionicHistory, $ionicLoading, $scope, $state) {
 
         //Get all issues
-        IssueService.getIssues(
-            function(data) {
-                $scope.issues = data;
-            },
-            function(error) {
-                $scope.error = error;
-            }
-        );
+    $scope.currentPage = 0;
+	IssueService.getIssues(
+		$scope.currentPage,
+		function(data){
+			$scope.issues = data;
+			$scope.currentPage++;
+			//$log.debug(data);
+		}, 
+		function(error){
+			$scope.error = error;
+		}
+	);
 
-    })
+	$scope.loadMoreIssues = function(){
+		IssueService.getIssues(
+			$scope.currentPage,
+			function(data){
+				Array.prototype.push.apply($scope.issues, data);
+				$scope.currentPage++;
+			},
+			function(error){
+				$scope.error = error;
+			}
+		);
+	}
+})
     // Specific issue controller
 
     .controller('IssueDetailsCtrl', function(IssueService, $log, $scope, $stateParams) {
@@ -76,13 +92,14 @@ angular.module('iflux.issues', [])
         return {
 
             //Get All Issue
-            getIssues: function(callback, errorCallback) {
+            getIssues: function(page, callback, errorCallback) {
                 $http({
                     method: 'GET',
                     url: apiUrl + '/issues/',
                     headers: {
-					'Content-Type': 'application/json',
-					'x-pagination': '0;999'
+					'x-pagination': page + ';20',
+					'x-sort': '-createdOn'
+				
 				}
                     
 
