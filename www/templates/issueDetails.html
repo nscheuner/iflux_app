@@ -62,7 +62,7 @@
         <li class="item comments" ng-repeat="comment in comments">
               <h2 class="issueTitle author">{{comment.author.name}}</h2>
               <p id="comment">{{comment.text}}</p>
-              <p class="date">{{comment.postedOn}}</p>
+              <p class="date">{{comment.postedOn | date: "d MMM yyyy ' at ' hh:mm"}}</p>
               </li>
         </ul>
   </div>

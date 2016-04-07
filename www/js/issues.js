@@ -1,4 +1,4 @@
-angular.module('iflux.issues',[])
+angular.module('iflux.issues', ['ngTagsInput'])
 
     //Issue list controller
     .controller('IssueCtrl', function(IssueService, apiUrl, $http, $ionicHistory, $ionicLoading, $scope, $state) {
@@ -48,9 +48,10 @@ angular.module('iflux.issues',[])
 
     })
     //Add issue controller
-.controller('createIssueCtrl', function($ionicHistory,IssueService, $log, $http, $scope, apiUrl, geolocation, $state){
+.controller('createIssueCtrl', function(CameraService, $ionicHistory,IssueService, $log, $http, $scope, apiUrl, geolocation, $state){
     
     $scope.issueToAdd = {};
+    $scope.placeholderUrl = '../img/placeholder.png';
 	
     geolocation.getLocation().then(function (data) {
         $scope.issueToAdd.lat = data.coords.latitude;
@@ -69,23 +70,77 @@ angular.module('iflux.issues',[])
 		}
 	);
     $scope.createIssue = function (issueToAdd){
-        issueToAdd.imageUrl = 'http://test.test';
-        
-        
+        if(issueToAdd.imageUrl === undefined){
+			issueToAdd.imageUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
+		}
         IssueService.createIssue(issueToAdd, 
 		function(data){
           $ionicHistory.nextViewOptions({
           disableAnimate: true,
           historyRoot: true
+          
         });
-            $state.go('tab.issueList');
-			$state.go('tab.issueDetails', {issueId: data.id});
+            $state.go('eventmenu.issueList');
+			$state.go('eventmenu.issueDetails', {issueId: data.id});
 		},
 		function(error){
 			alert.error('An error occured : '+ error);
 		});
        
     }
+    $scope.takeIssuePhoto = function(){
+	    takePhoto().then(uploadPhoto).then(function (data) {
+	    	//alert('image successfully uploaded !');
+	      $scope.issueToAdd.imageUrl = data.data.url;
+	    }, function(error) {
+			alert(error);
+	    });
+	}
+
+	function takePhoto(){
+		return CameraService.getPicture({
+			quality: 75,
+			targetWidth: 400,
+			targetHeight: 300,
+			// return base64-encoded data instead of a file
+			destinationType: Camera.DestinationType.DATA_URL
+		});
+	}
+
+	function uploadPhoto(imageData){
+		var result = $http({
+			method: "POST",
+			url: qimgUrl + "/images",
+			headers: {
+				Authorization: "Bearer " + qimgToken
+			},
+			data: {
+				data: imageData
+			}
+		});
+
+		return result;
+	}
+})
+    
+  
+    .factory("CameraService", function($q) {
+	return {
+		getPicture: function(options) {
+			var deferred = $q.defer();
+			navigator.camera.getPicture(
+				function(result) {
+					// do any magic you need
+					deferred.resolve(result);
+				}, 
+				function(err) {
+					deferred.reject(err);
+				}, 
+				options
+			);
+			return deferred.promise;
+		}
+	}
 })
 
     .factory('IssueService', function($http, apiUrl, $log) {
