@@ -4,9 +4,10 @@
 <div class="list list-inset">
   <label class="item item-input">
     <i class="icon ion-search placeholder-icon"></i>
-    <input ng-model="searchText" placeholder="Search">
+    <input ng-model="searchText" type="text" placeholder="Search">
   </label>
 </div>
+
  <ion-list>
 	<div class="list">
 	    <a class="item item-thumbnail-left" ng-href="#/menu/issueDetails/{{issue.id}}" ng-repeat="issue in issues | filter:searchText">
