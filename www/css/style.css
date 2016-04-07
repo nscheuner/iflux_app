@@ -1,50 +1,62 @@
-.tabs {
-    padding-top: 2px;
-    border-top: none !important;
-    border-bottom: none;
-    background-position: top;
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-color: black;
-}
 img {
     width: 100%;
 }
-.tab-item .icon {
-    display: block;
-    margin: 0 auto;
-    height: 32px;
-    font-size: 32px;
-    color: white;
+
+h2{
+        font-family: 'Covered By Your Grace', cursive;
+        font-size: 23px;
+        color: #0B486B;
 }
-.vabien p{
-    color: black;
-    font-size: 18px;
+
+.vabien p {
+    color: #0B486B;
+    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 .vabien{
     border-color: white;
 }
-.tabs {
-    padding-top: 2px;
-    margin-bottom: 5px;
-    border-top: none !important;
-    border-bottom: none;
-    background-position: top;
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-color: black;
+
+a.item {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
 }
 
+
 .bar.bar-assertive {
-    border-color: black;
-    background-color: black;
+    border-color: #0B486B;
+    background-color: #0B486B;
     background-image: linear-gradient(0deg, #e42112, #e42112 50%, transparent 50%);
     color: #fff;
+    font-family: 'Covered By Your Grace', cursive;
 }
 
 .bar.bar-stable .title {
-    color: black;
+    color: #0B486B;
+    font-family: 'Rajdhani', sans-serif;
+        font-size: 25px;
+}
+
+.bar.bar-positive .title {
+    color: white;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 34px;
+}
+.bar.bar-assertive .title {
+    color: #fff;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 34px;
+}
+
+.bar-positive .button.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Covered By Your Grace', cursive;
 }
 
 .bar-stable .button {
@@ -56,12 +68,12 @@ img {
 
 .bar.bar-stable {
     border-color: black;
-    color: black;
+    color: white;
     background-color: white;
 }
 .bar.bar-positive {
-    border-color: black;
-    background-color: black;
+    border-color: #0B486B;
+    background-color: #0B486B;
     background-image: linear-gradient(0deg, #0c60ee, #0c60ee 50%, transparent 50%);
     color: white;
 }
@@ -75,24 +87,19 @@ img {
 
 .intro {
     text-align: center;
+    font-size: 50px;
+    font-family: 'Covered By Your Grace', cursive;
+    text-align: center;
+    color: #0B486B;
 }
+
+.intro h1{
+
+}
+
 
 .introI{
     text-align: center;
-    margin-left: 70px;
-    color: blue;
+    margin-left: 45px;
+    color: #0B486B;
 }
-/*
-.item {
-    border-color: white;
-    background-color: #fff;
-    color: black;
-    position: relative;
-    z-index: 2;
-    display: block;
-    margin: -1px;
-    padding: 16px;
-    border-width: 1px;
-    border-style: solid;
-    font-size: 16px;
-}*/
