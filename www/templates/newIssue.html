@@ -1,0 +1,38 @@
+<ion-view view-title="New Issue">
+    <ion-nav-buttons side="secondary">
+        <i ng-controller="LogoutCtrl" ng-click="logOut()" class="icon ion-nuclear" style="margin-top: 5px;"></i>
+    </ion-nav-buttons>
+    <ion-content>
+
+        <div class="list list-inset">
+            <form name="issueForm">
+
+                <!--IssueType-->
+                <div class="list">
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Choose an issue type
+                        </div>
+                        <select ng-model="issueToAdd.issueTypeId" required="required">
+                            <option ng-repeat="issueType in issuetypes" value="{{issueType.id}}">{{issueType.name}}</option>
+                        </select>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Description</span>
+                        <input type="text" ng-model="issueToAdd.description" required="required">
+                    </label>
+                </div>
+                 <p ng-if="error" class="error">{{ error }}</p>
+
+                <button class="button button-full button-positive" ng-click="createIssue(issueToAdd)" ng-disabled="loginForm.$invalid">Add</button>
+            </form>
+        </div>
+
+
+
+
+
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,5 @@
+{
+  "apiUrl": "https://<YOUR_API_URL>/api",
+  "mapboxMapId" : "...",
+  "mapboxAccessToken":"..."
+}

@@ -1,0 +1,73 @@
+<ion-view view-title="IssueDetails">
+<ion-content style="margin-top:0px;">
+
+<div class="bar bar-header bar-stable">
+  <h1 class="title">{{issue.issueType.name}}</h1>
+</div>
+
+<img class="issueDetailImage" ng-src="{{issue.imageUrl}}">
+
+<div class="item item-button-right vabien">
+<p class="state">Informations</p>
+<button class="button button-positive">
+      <i class="ion-plus"></i>
+</button>
+</div>
+
+	<div class="contentInfo">
+    <ul class="list" ng-if="issue.lat && issue.lng">
+              <li class="item" ng-if="issue.state == 'in_progress'">Statut : In Progress</li>
+              <li class="item" ng-if="issue.state == 'created'">Statut : Created</li>
+              <li class="item" ng-if="issue.state == 'acknowledged'">Statut :Acknowledged</li>
+              <li class="item" ng-if="issue.state == 'assigned'">Statut : Assigned</li>
+              <li class="item" ng-if="issue.state == 'solved'">Statut : Solved</li>
+              <li class="item" ng-if="issue.state == 'rejected'">Statut : Rejected</li>
+              <li class="item">
+              {{issue.description}}
+              </li>
+              <li class="item" >
+              lat: {{issue.lat}}
+              </li>
+              <li class="item">
+              lng: {{issue.lng}}
+              </li>
+        </ul>
+  </div>
+
+
+  <div class="item item-button-right vabien">
+    <p class="state">Tags</p>
+    <button class="button button-positive">
+      <i class="ion-plus"></i>
+    </button>
+  </div>
+
+  <div class="ContentTag">
+      <ul class="list">
+              <li class="item" ng-repeat="tag in tags">
+              {{tag}}
+              </li>
+        </ul>
+  </div>
+
+  <div class="item item-button-right vabien">
+    <p class="state">Comments</p>
+    <button class="button button-positive">
+      <i class="ion-plus"></i>
+    </button>
+  </div>
+
+  <div class="contentComments">
+      <ul class="list">
+        <li class="item comments" ng-repeat="comment in comments">
+              <h2 class="issueTitle author">{{comment.author.name}}</h2>
+              <p id="comment">{{comment.text}}</p>
+              <p class="date">{{comment.postedOn}}</p>
+              </li>
+        </ul>
+  </div>
+            
+        </div>
+</ion-content>
+
+</ion-view>
