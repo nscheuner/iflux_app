@@ -1,19 +1,10 @@
 <ion-view view-title="IssueDetails">
 <ion-content style="margin-top:0px;">
 
-<div class="bar bar-header bar-stable">
-  <h1 class="title">{{issue.issueType.name}}</h1>
-</div>
 
 <img class="issueDetailImage" ng-src="{{issue.imageUrl}}">
 
-<div class="item item-button-right vabien">
-<p class="state">Informations</p>
-<button class="button button-positive">
-      <i class="ion-plus"></i>
-</button>
-</div>
-
+  <h2 class="titleDetail">{{issue.issueType.name}}</h2>
 	<div class="contentInfo">
     <ul class="list" ng-if="issue.lat && issue.lng">
               <li class="item" ng-if="issue.state == 'in_progress'">Statut : In Progress</li>
@@ -36,7 +27,7 @@
 
 
   <div class="item item-button-right vabien">
-    <p class="state">Tags</p>
+    <h2>Tags</h2>
     <button class="button button-positive" ng-click="showTag = !showTag">
       <i class="ion-plus"></i>
     </button>
@@ -51,7 +42,7 @@
   </div>
 
   <div class="item item-button-right vabien">
-    <p class="state">Comments</p>
+    <h2>Comments</h2>
     <button class="button button-positive" ng-click="showComment = !showComment">
       <i class="ion-plus"></i>
     </button>
