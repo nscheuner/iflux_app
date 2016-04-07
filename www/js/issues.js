@@ -51,7 +51,7 @@ angular.module('iflux.issues', ['ngTagsInput'])
 .controller('createIssueCtrl', function(CameraService, $ionicHistory,IssueService, $log, $http, $scope, apiUrl, geolocation, $state){
     
     $scope.issueToAdd = {};
-    $scope.placeholderUrl = '../img/placeholder.png';
+    $scope.placeholderUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
 	
     geolocation.getLocation().then(function (data) {
         $scope.issueToAdd.lat = data.coords.latitude;
