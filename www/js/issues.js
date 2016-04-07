@@ -53,11 +53,18 @@ angular.module('iflux.issues', ['ngTagsInput'])
     $scope.issueToAdd = {};
     $scope.placeholderUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
 	
+    //To prevent firefox geoloc but we first set geoData
+    $scope.issueToAdd.lat = 46.78;
+    $scope.issueToAdd.lng = 6.65;
+    
+    
     geolocation.getLocation().then(function (data) {
         $scope.issueToAdd.lat = data.coords.latitude;
         $scope.issueToAdd.lng = data.coords.longitude;
+                
     }, function (error) {
-        $log.error("Geolocation error" + error);
+        //TO DO ERROR HANDLING ($WINDOW WARNING)
+        
     });
 
 	// GET issueTypes
@@ -85,7 +92,6 @@ angular.module('iflux.issues', ['ngTagsInput'])
     }
     $scope.takeIssuePhoto = function(){
 	    takePhoto().then(uploadPhoto).then(function (data) {
-	    	//alert('image successfully uploaded !');
 	      $scope.issueToAdd.imageUrl = data.data.url;
 	    }, function(error) {
 			alert(error);
