@@ -228,10 +228,13 @@ angular.module('iflux.issues', ['ngTagsInput'])
                 });
             },
             //get issues related to a specific user
-            getMyIssues: function(callback, errorCallback) {
+            getMyIssues: function(page, callback, errorCallback) {
                 $http({
                     method: 'GET',
                     url: apiUrl + '/me/issues',
+                    headers: {
+					'x-pagination': page + ';20'
+				}
                 }).success(function(data, status, headers, config) {
                     callback(data);
                 }).error(function(data, status, headers, config) {
