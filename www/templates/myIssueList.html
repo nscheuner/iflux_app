@@ -13,14 +13,14 @@
 	    <a class="item item-thumbnail-left" ng-href="#/menu/issueDetails/{{issue.id}}" ng-repeat="issue in issues | filter:searchText">
 	      <img src="{{issue.imageUrl}}">
 	     <h2 class="issueType">{{issue.issueType.name}}</h2>
-	    <p class="state" ng-if="issue.state == 'in_progress'">In Progress</p>
-		<p class="state" ng-if="issue.state == 'created'">Created</p>
-		<p class="state" ng-if="issue.state == 'acknowledged'">Acknowledged</p>
-		<p class="state" ng-if="issue.state == 'assigned'">Assigned</p>
-		<p class="state" ng-if="issue.state == 'solved'">Solved</p>
-		<p class="state" ng-if="issue.state == 'rejected'">Rejected</p>
+	    <p class="state" ng-if="issue.state == 'in_progress'" style="text-align: center;">In Progress</p>
+		<p class="state" ng-if="issue.state == 'created'" style="text-align: center;">Created</p>
+		<p class="state" ng-if="issue.state == 'acknowledged'" style="text-align: center;">Acknowledged</p>
+		<p class="state" ng-if="issue.state == 'assigned'" style="text-align: center;">Assigned</p>
+		<p class="state" ng-if="issue.state == 'solved'" style="text-align: center;">Solved</p>
+		<p class="state" ng-if="issue.state == 'rejected'" style="text-align: center;">Rejected</p>
 
-	      <p>{{issue.description}}</p>
+	      <p style="text-align: center;">{{issue.description}}</p>
 	    </a>
 	</div>
     <div class="item tabs tabs-secondary tabs-icon-left more" ng-click="loadMoreIssues()" on-swipe-up="loadMoreIssues()">	
