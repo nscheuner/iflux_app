@@ -1,4 +1,4 @@
-angular.module('iflux.issues', [])
+angular.module('iflux.issues',[])
 
     //Issue list controller
     .controller('IssueCtrl', function(IssueService, apiUrl, $http, $ionicHistory, $ionicLoading, $scope, $state) {

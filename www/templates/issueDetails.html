@@ -37,12 +37,12 @@
 
   <div class="item item-button-right vabien">
     <p class="state">Tags</p>
-    <button class="button button-positive">
+    <button class="button button-positive" ng-click="showTag = !showTag">
       <i class="ion-plus"></i>
     </button>
   </div>
 
-  <div class="ContentTag">
+  <div ng-show="showTag" class="ContentTag">
       <ul class="list">
               <li class="item" ng-repeat="tag in tags">
               {{tag}}
@@ -52,12 +52,12 @@
 
   <div class="item item-button-right vabien">
     <p class="state">Comments</p>
-    <button class="button button-positive">
+    <button class="button button-positive" ng-click="showComment = !showComment">
       <i class="ion-plus"></i>
     </button>
   </div>
 
-  <div class="contentComments">
+  <div ng-show="showComment" class="contentComments">
       <ul class="list">
         <li class="item comments" ng-repeat="comment in comments">
               <h2 class="issueTitle author">{{comment.author.name}}</h2>
