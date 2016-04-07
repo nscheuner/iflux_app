@@ -48,7 +48,7 @@ angular.module('iflux.issues', ['ngTagsInput'])
 
     })
     //Add issue controller
-.controller('createIssueCtrl', function(CameraService, $ionicHistory,IssueService, $log, $http, $scope, apiUrl, geolocation, $state){
+.controller('createIssueCtrl', function(qimgUrl, qimgToken, CameraService, $ionicHistory,IssueService, $log, $http, $scope, apiUrl, geolocation, $state){
     
     $scope.issueToAdd = {};
     $scope.placeholderUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
@@ -70,17 +70,12 @@ angular.module('iflux.issues', ['ngTagsInput'])
 		}
 	);
     $scope.createIssue = function (issueToAdd){
+        
         if(issueToAdd.imageUrl === undefined){
 			issueToAdd.imageUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
 		}
         IssueService.createIssue(issueToAdd, 
 		function(data){
-          $ionicHistory.nextViewOptions({
-          disableAnimate: true,
-          historyRoot: true
-          
-        });
-            $state.go('eventmenu.issueList');
 			$state.go('eventmenu.issueDetails', {issueId: data.id});
 		},
 		function(error){
