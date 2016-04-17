@@ -2,10 +2,7 @@
 
 <a name="top"></a>
 
-This repository contains instructions to build a skeleton application that will serve as a starting point to develop the Citizen Engagement mobile application.
-The completed skeleton app is available [here](https://github.com/SoftEng-HEIGVD/Teaching-HEIGVD-CM_APPMOB-2016).
-
-* [Prerequisites](#author)
+* [Author](#author)
 * [Prerequisites](#pre)
 * [Features](#features)
 
@@ -13,25 +10,6 @@ The completed skeleton app is available [here](https://github.com/SoftEng-HEIGVD
 2. [Set up the application](#setup)
   * [Fork this repo and put a blank Ionic app in it](#setup-fork)
   * [Install application dependencies](#setup-deps)
-  * [Serve the application locally](#setup-serve)
-  * [Rename the main AngularJS module](#setup-rename)
-3. [Set up the navigation structure](#structure)
-  * [Create the templates](#structure-create-templates)
-  * [Update the app to use the templates](#structure-use-templates)
-  * [Define the states (or routes)](#structure-states)
-4. [Set up security](#security)
-  * [Create the login screen](#security-login-screen)
-  * [Create the authentication service](#security-auth-service)
-  * [Set up a proxy (for local development only)](#security-proxy)
-  * [Log in with the API](#security-api-login)
-  * [Log out](#security-logout)
-  * [Storing the authentication credentials](#security-store)
-  * [Configuring an HTTP interceptor](#security-interceptor)
-5. [Multi-environment configuration](#multienv)
-  * [Write environment-specific configuration files](#multienv-config)
-  * [Do not put configuration files under version control](#multienv-ignore)
-  * [Feed the configuration to Angular](#multienv-angular)
-
 
 
 <a name="author"></a>
@@ -51,21 +29,23 @@ If you wish to use our code you will need the following:
 * [Node.js](https://nodejs.org)(v.5.x.x not supported)
 You could just us the GUI
 * [Ionic](http://ionicframework.com/)
+```sh
     $ npm install -g ionic cordova
-
-    'npm install -g ionic cordova'
-
+```
 * Git clone this rep.
 * Install/Update dependencies 
+```sh
     $ npm install && bower install
+```
 * Create 'production' and 'development' config filed in 'config' base on the 'sample.json' provided
 **NOTE** We used [Mapbox](https://www.mapbox.com/) and a custom image hoster API, feel free to work with whatever you want.
 * The app requires several cordova plugin we will just give you the complete installation line (you are welcome)
+```sh
     $ cordova plugin add cordova-plugin-geolocation && cordova plugin add cordova-plugin-camera
     && cordova plugin add cordova-plugin-console && cordova plugin add cordova-plugin-device
     && cordova plugin add cordova-plugin-splashscreen && cordova plugin add cordova-plugin-statusbar
     && cordova plugin add cordova-plugin-whitelist && cordova plugin add ionic-plugin-keyboard
-
+```
 <a name="APK"></a>
 ## Final APK
 You could also try our built projet. Get the [APK](http://www.)
