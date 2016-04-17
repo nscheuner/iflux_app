@@ -195,6 +195,7 @@ angular.module('iflux.issues', ['ngTagsInput'])
                     errorCallback(data);
                 });
             },
+            
             //Get a specific issue with details
             getDetails: function(issueId, callback, errorCallback) {
                 $http({
