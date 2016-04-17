@@ -1,10 +1,11 @@
-# Citizen Engagement Mobile Application
+# Iflux - Academic Citizen Delation App
 
 <a name="top"></a>
 
 This repository contains instructions to build a skeleton application that will serve as a starting point to develop the Citizen Engagement mobile application.
-The completed skeleton app is available [here](https://github.com/SoftEng-HEIGVD/Teaching-HEIGVD-CM_APPMOB-2016-SkeletonApp).
+The completed skeleton app is available [here](https://github.com/SoftEng-HEIGVD/Teaching-HEIGVD-CM_APPMOB-2016).
 
+* [Prerequisites](#author)
 * [Prerequisites](#pre)
 * [Features](#features)
 
@@ -33,16 +34,38 @@ The completed skeleton app is available [here](https://github.com/SoftEng-HEIGVD
 
 
 
-
+<a name="author"></a>
+## Academic projet - HEIG-VD - MM42 Nicolas S. & Lukas S.
 <a name="pre"></a>
 ## Prerequisites
 
-These instructions assume that you have implemented and deployed the Citizen Engagement API as described in [this article](http://www.iflux.io/use-case/2015/02/03/citizen-engagement.html) and [this course repository](https://github.com/SoftEng-HEIGVD/Teaching-HEIGVD-CM_WEBS-2016).
+This academic projet is base on [this article](http://www.iflux.io/use-case/2015/02/03/citizen-engagement.html) and [this course repository](https://github.com/SoftEng-HEIGVD/Teaching-HEIGVD-CM_WEBS-2016).
 
-You will need to have [Node.js](https://nodejs.org) installed.
-The latest LTS (Long Term Support) version is recommended (v4.4.2 at the time of writing these instructions).
-The Ionic documentation currently indicates that versions v5.x.x are not supported.
+<a name="install"></a>
+## Installation
 
+The aim of this projet is to build a mobile app that interacts with an API.
+If you wish to use our code you will need the following:
+
+
+* [Node.js](https://nodejs.org)(v.5.x.x not supported)
+You could just us the GUI
+* [Ionic](http://ionicframework.com/)
+    $ npm install -g ionic cordova
+* Git clone this rep.
+* Install/Update dependencies 
+    $ npm install && bower install
+* Create 'production' and 'development' config filed in 'config' base on the 'sample.json' provided
+**NOTE** We used [Mapbox](https://www.mapbox.com/) and a custom image hoster API, feel free to work with whatever you want.
+* The app requires several cordova plugin we will just give you the complete installation line (you are welcome)
+    $ cordova plugin add cordova-plugin-geolocation && cordova plugin add cordova-plugin-camera
+    && cordova plugin add cordova-plugin-console && cordova plugin add cordova-plugin-device
+    && cordova plugin add cordova-plugin-splashscreen && cordova plugin add cordova-plugin-statusbar
+    && cordova plugin add cordova-plugin-whitelist && cordova plugin add ionic-plugin-keyboard
+
+<a name="APK"></a>
+## Final APK
+You could also try our built projet. Get the [APK](http://www.)
 <a href="#top">Back to top</a>
 
 
