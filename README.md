@@ -7,6 +7,7 @@
 * [Installation](#install)
 * [Final APK](#APK)
 * [Features](#features)
+* [Demonstration](#demo)
 * [Known bug](#bug)
 * [ToDo list](#todo)
 
@@ -82,10 +83,10 @@ The proposed app allow citizens to do the following:
   * comments;
   * Tags;
 * see user related issues
-
-
-
 <a href="#top">Back to top</a>
+
+<a name="demo"></a>
+## Demonstration
 
 
 
@@ -100,7 +101,7 @@ It does not affect the issue list
 ## ToDo list
 
 “Mon projet préféré ? C'est le prochain.”
-
+<a href="#top">Back to top</a>
 * Solve pop-up map issues problem
 * Enhance pop-up styling
 * Implement admin function(such as issue deletion)
