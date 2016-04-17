@@ -52,6 +52,9 @@ If you wish to use our code you will need the following:
 You could just us the GUI
 * [Ionic](http://ionicframework.com/)
     $ npm install -g ionic cordova
+
+    npm install -g ionic cordova
+
 * Git clone this rep.
 * Install/Update dependencies 
     $ npm install && bower install
