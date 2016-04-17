@@ -1,5 +1,7 @@
 {
-  "apiUrl": "https://<YOUR_API_URL>/api",
-  "mapboxMapId" : "...",
-  "mapboxAccessToken":"..."
+  "apiUrl": "https://YOUR_API_URL/api",
+  "qimgUrl": "https://YOUR_IMG_HOST_URL/api",
+  "qimgToken":"YOUR_QIMG_TOKEN",
+  "mapboxMapId" : "YOUR_MAPBOX_ID",
+  "mapboxAccessToken":"YOUR_MAPBOX_TOKEN"
 }
