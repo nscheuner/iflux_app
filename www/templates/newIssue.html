@@ -18,13 +18,15 @@
                         <span class="input-label">Description</span>
                         <input type="text" ng-model="issueToAdd.description" required="required">
                     </label>
-                    <label>
+                    </div>
+                    <div class="tag-template">
                     <tags-input name="tagToAdd" ng-model="tagToAdd.tags"></tags-input>
-                    </label>
-                </div>
-                 <img class="newIssueImg" ng-model="issueToAdd.imageUrl" ng-src="{{issueToAdd.imageUrl}}" ng-show="issueToAdd.imageUrl !== undefined" width="100px" height="100px"></img>
+                    </div>
+                    <div picture>
+                 <img class="newIssueImg" ng-model="issueToAdd.imageUrl" ng-src="{{issueToAdd.imageUrl}}" ng-show="issueToAdd.imageUrl !== undefined" height="{{ missueToAdd.height }}" width="{{ issueToAdd.width }}"></img>
 
-                 <img class="newIssueImg" ng-model="issueToAdd.imageUrl" ng-src="{{placeholderUrl}}" ng-show="issueToAdd.imageUrl === undefined" width="100px" height="100px"></img>
+                 <img class="newIssueImg" ng-model="issueToAdd.imageUrl" ng-src="{{placeholderUrl}}" ng-show="issueToAdd.imageUrl === undefined" height="{{ missueToAdd.height }}" width="{{ issueToAdd.width }}"></img>
+                    </div>
                  <button ng-click="takeIssuePhoto()" class="button icon camera"><i class="ion-camera"></i></button>
                  <p ng-if="error" class="error">{{ error }}</p>
 

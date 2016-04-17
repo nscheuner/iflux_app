@@ -79,10 +79,9 @@ angular.module('iflux.issues', ['ngTagsInput'])
 		}
 	);
     $scope.createIssue = function (issueToAdd){
-        var test = $scope;
-        console.log(test);
-        
+        var tagScope = $scope;        
         if(issueToAdd.imageUrl === undefined){
+            //empty placeholder
 			issueToAdd.imageUrl = 'http://www.lifsstill.com/wp-content/uploads/2014/05/upload-empty.png';
 		}
         IssueService.createIssue(issueToAdd, 
@@ -93,7 +92,7 @@ angular.module('iflux.issues', ['ngTagsInput'])
 
         var tags = [];       
        
-        for(var i=0;i<test.tagToAdd.tags.length;i++){
+        for(var i=0;i<tagScope.tagToAdd.tags.length;i++){
           tags.push($scope.tagToAdd.tags[i].text);
         }
         
@@ -132,6 +131,8 @@ angular.module('iflux.issues', ['ngTagsInput'])
 			quality: 75,
 			targetWidth: 400,
 			targetHeight: 300,
+            saveToPhotoAlbum: false,
+	        correctOrientation:true,
 			// return base64-encoded data instead of a file
 			destinationType: Camera.DestinationType.DATA_URL
 		});
