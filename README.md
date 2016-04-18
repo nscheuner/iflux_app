@@ -112,7 +112,7 @@ Nothing special here, you can hit the "+" button for tag and comment to show/hid
 
 
 Here you can create a new issue, Type as to be choosen from the given list, description is mandatory and ou can add tag (poor design to be improved..) just hit enter or mobile equivalent to assign tag.
-Geolocation is automatic, in case geolocation is not possible, issue will have position  [46.78;6.65] (Yverdon)
+Geolocation is automatic, in case geolocation is not possible, issue will have position 46.78;6.65 (Yverdon)
 Hit the camera button to take a picture with you mobile device (only work on mobile devices), please be patient server is slow :)
 Once your picture is uploaded hit add and the app will redirect you on the issue details of your newly added app.
 
