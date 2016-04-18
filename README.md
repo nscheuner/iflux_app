@@ -87,22 +87,30 @@ The proposed app allow citizens to do the following:
 
 <a name="demo"></a>
 ## Demonstration
-# Logister
+### Logister
 ![alt Img1_Logister](http://ac2p.ch/tmp/1_Logister.PNG)
+
+
 Auth page calls the "logister" ressource from the API, put whatever you want to login, auth is based on JWT token.
-# Issue Map
+### Issue Map
 ![alt Img1_MAP](http://ac2p.ch/tmp/2_Map.PNG)
+
+
 This is the default page once logged in, you see all the issue display on the map, you can click on them to see information pop-up and hit details to open the issue details.
 The app will try to get your position to center the map, when geolocation can't access your postion you will be focus to Yverdon where default issue are based
-# Issue List
+### Issue List
 ![alt Img3_List](http://ac2p.ch/tmp/3_List.PNG)
+
+
 The issue list shows the 20 last issue added, you can hit the more button to load the 20 next.
 You can use full text search bar to search trough the issue (only the one displayed)
 Hit one specific issue to seee details
-# Issue Details
+### Issue Details
 Nothing special here, you can hit the "+" button for tag and comment to show/hide tags and comments (if there is any) for the specific issue
-# New issue
+### New issue
 ![alt Img4_New](http://ac2p.ch/tmp/4_New.PNG)
+
+
 Here you can create a new issue, Type as to be choosen from the given list, description is mandatory and ou can add tag (poor design to be improved..) just hit enter or mobile equivalent to assign tag.
 Geolocation is automatic, in case geolocation is not possible, issue will have position  [46.78;6.65] (Yverdon)
 Hit the camera button to take a picture with you mobile device (only work on mobile devices), please be patient server is slow :)
