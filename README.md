@@ -53,7 +53,7 @@ You could just us the GUI
 
 <a name="APK"></a>
 ## Final APK
-You could also try our built projet. Get the [APK](http://www.)
+You could also try our built projet. Get the [APK](http://www.ac2p.ch/tmp/Iflux_unsigned.apk)
 
 
 <a href="#top">Back to top</a>
@@ -136,3 +136,4 @@ It does not affect the issue list
 * Enhance tag styling
 * Handle issue comments
 * Deploy "real" ACL and user base
+* Complete error handeling
