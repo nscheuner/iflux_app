@@ -86,7 +86,6 @@ angular.module('iflux.issues', ['ngTagsInput'])
 		}
         IssueService.createIssue(issueToAdd, 
 		function(data){
-            //
             var id = data.id;
         var url = apiUrl+"/issues/"+id+"/actions";
 

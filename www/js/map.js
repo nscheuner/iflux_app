@@ -34,14 +34,13 @@ angular.module('iflux.map', ['geolocation'])
 					var issue = data[i];
 					$scope.mapMarkers.push({
                         lat: issue.lat,
-                        lng: issue.lng,						
-						focus: true,
-						riseOnHover: true,
+                        lng: issue.lng,	
                         message: "<h2>Description</h2><p>{{ issue.description }}</br></p><h2>Type</h2><p>{{issue.issueType.name}}</br></p><h2>Status</h2><p>{{ issue.state }}</br></p><img src='{{ issue.imageUrl }}' width='200px' /></br><a ng-href='#menu/issueDetailsFromMap/{{issue.id}}'>Details</a>",
 						getMessageScope: function() {
                             var scope = $scope.$new();
                             scope.issue = issue;
                             return scope;
+							
                         }
                      });   
 				
@@ -52,16 +51,5 @@ angular.module('iflux.map', ['geolocation'])
 			$log.debug(error);
 		}
 	);
-	function createMarkerScope(issue){
-		return function(){
-			var scope = $scope.$new();
-			scope.issue = issue;
-			return issue;
-		}
-	}
-	
-
-	
-	
-	
+		
 });
