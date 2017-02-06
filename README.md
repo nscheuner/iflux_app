@@ -53,7 +53,7 @@ You could just us the GUI
 
 <a name="APK"></a>
 ## Final APK
-You could also try our built projet. Get the [APK](http://www.ac2p.ch/tmp/Iflux_unsigned.apk)
+You could also try our built projet. Get the [APK](https://www.nscheuner.com/res/Iflux_unsigned.apk)
 
 
 <a href="#top">Back to top</a>
